@@ -1,0 +1,9 @@
+#!/bin/sh
+
+container_ids=""
+
+docker ps --filter "name=clef" --format "{{.ID}}" | while read -r id; do
+    container_ids="$container_ids $id"
+done
+
+docker stop $container_ids
