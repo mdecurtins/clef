@@ -28,5 +28,6 @@ services:
       - 8080:8080
     environment:
       - ALGORITHMS_DIR=/usr/src/algorithms
+      - DATASETS_DIR=/usr/local/data
       - JARFILE=clef-0.1.jar
       - JAVA_OPTIONS=-Djava.security.egd=file:/dev/./urandom
