@@ -24,6 +24,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - './core/algorithms:/usr/src/algorithms'
+      - './symbolic_data:/usr/local/data'
     ports:
       - 8080:8080
     environment:
