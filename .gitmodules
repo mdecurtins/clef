@@ -1,0 +1,9 @@
+[submodule "db"]
+	path = db
+	url = git@github.com:mdecurtins/clef-db.git
+[submodule "webapp"]
+	path = webapp
+	url = git@github.com:mdecurtins/clef-webapp.git
+[submodule "core"]
+	path = core
+	url = git@github.com:mdecurtins/clef-core.git
