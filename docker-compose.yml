@@ -22,6 +22,8 @@ services:
     build:
       context: ./core
       dockerfile: Dockerfile
+    links:
+      - db
     volumes:
       - './core/algorithms:/usr/src/algorithms'
       - './symbolic_data:/usr/local/data'
@@ -32,3 +34,16 @@ services:
       - DATASETS_DIR=/usr/local/data
       - JARFILE=clef-0.1.jar
       - JAVA_OPTIONS=-Djava.security.egd=file:/dev/./urandom
+      - MYSQL_DATABASE=clef
+      - MYSQL_ROOT_PASSWORD=root
+
+  db:
+    image: clef_db
+    container_name: clef-db
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    ports:
+      - 3030:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
